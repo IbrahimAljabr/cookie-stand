@@ -1,0 +1,7 @@
+td ,table {
+    border-style: solid;
+    border-width: 3px;
+    border-collapse: collapse;
+    border-color: gray;
+    padding: 7px;
+}
