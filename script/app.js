@@ -1,3 +1,5 @@
+'use strict';
+
 
 totalSeattle = 0;
 totalTokyo = 0;
