@@ -120,7 +120,6 @@ for (let index = 0; index < 14; index++) {
     document.getElementById("myTr").appendChild(td);
     totalSeattle = totalSeattle + (seattle.customerNumber(seattle.max, seattle.min));
     timeArr[0]=(seattle.customerNumber(seattle.max, seattle.min));
-    console.log(timeArr[0]);
 }
 
 
@@ -275,11 +274,7 @@ function fotter() {
 
 }
 
-console.log(seattle.customerNumber(seattle.max, seattle.min));
-console.log(tokyo.customerNumber(tokyo.max, tokyo.min));
-console.log(dubai.customerNumber(dubai.max, dubai.min));
-console.log(paris.customerNumber(paris.max, paris.min));
-console.log(lima.customerNumber(lima.max, lima.min));
+
 
 
 fotter();
