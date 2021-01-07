@@ -48,7 +48,7 @@ City.prototype.addCityRow = function () {
 
     td = document.createElement('td');
     td.textContent = this.cityName;
-    table.appendChild(td);
+    tr.appendChild(td);
 
 
     this.sellPerHour();
@@ -57,13 +57,13 @@ City.prototype.addCityRow = function () {
 
         td = document.createElement('td');
         td.textContent = this.cookiesPerHour[index];
-        table.appendChild(td);
+        tr.appendChild(td);
         this.totol += this.cookiesPerHour[index];
     }
 
     td = document.createElement('td');
     td.textContent = this.totol;
-    table.appendChild(td);
+    tr.appendChild(td);
 
 }
 
@@ -85,7 +85,8 @@ var tr
 var td
 var parentElement = document.getElementById("divid");
 var table = document.createElement('table');
-parentElement.appendChild(table);
+    table.setAttribute("id", "myTable");
+    parentElement.appendChild(table);
 
 
 
@@ -104,6 +105,7 @@ function header() {
 
     }
 
+    
     td = document.createElement('th');
     td.textContent = "Total";
     table.appendChild(td);
@@ -119,8 +121,11 @@ function fotter() {
     table.appendChild(tr);
 
     td = document.createElement('td');
-    td.textContent = "totale";
+    td.textContent = "Totsdasdale";
     table.appendChild(td);
+
+
+    tr.setAttribute("id", "mytr");
 
     var fintTotal = 0;
     for (let index = 0; index < timeArr.length; index++) {
@@ -158,7 +163,8 @@ function fotter() {
 
 function addNewSubmit() {
     var newrow = document.getElementById("addCityForm");
-    newrow.addEventListener("submit", eventNew)
+    
+    return newrow.addEventListener("submit", eventNew);
 }
 
 function eventNew(event) {
@@ -172,13 +178,22 @@ function eventNew(event) {
 
     var newCitySubmit = new City(newCityName, max, min, avgCo);
 
+    
+    // console.log(document.getElementById("mytr"));
+    // table.innerHTML("");
+    
+
+    
     newCitySubmit.addCityRow();
+
+    fotter();
+    
     console.log("hello");
 }
 
 
 
-addNewSubmit();
+
 header();
 
 
@@ -189,9 +204,9 @@ for (let index = 0; index < cityArr.length; index++) {
 
 
 
-// fotter();
+fotter();
 
-
+addNewSubmit();
 
 
 
