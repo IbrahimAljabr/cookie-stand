@@ -12,7 +12,7 @@ var cityArr = [];
 
 
 function randonNumber(max, min) {
-    return Math.floor(Math.random() * (max, min) + min);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 function City(cityName, max, min, avCookie) {
@@ -25,6 +25,8 @@ function City(cityName, max, min, avCookie) {
     cityArr.push(this);
 
 }
+
+305+409+182+286+182+162+357+344+201+195+227+221+266+156
 
 City.prototype.customerNumber = function () {
     return randonNumber(this.max, this.min)
@@ -51,6 +53,7 @@ City.prototype.addCityRow = function () {
     tr.appendChild(td);
 
 
+    this.totol=0;
     this.sellPerHour();
 
     for (let index = 0; index < timeArr.length; index++) {
@@ -121,7 +124,7 @@ function fotter() {
     table.appendChild(tr);
 
     td = document.createElement('td');
-    td.textContent = "Totsdasdale";
+    td.textContent = "Totale";
     table.appendChild(td);
 
 
@@ -180,13 +183,18 @@ function eventNew(event) {
 
     
     // console.log(document.getElementById("mytr"));
-    // table.innerHTML("");
+    table.innerHTML="";
     
 
+    header();
     
-    newCitySubmit.addCityRow();
+    for (let index = 0; index < cityArr.length; index++) {
 
+        cityArr[index].addCityRow();
+    }
     fotter();
+    addCityRow();
+
     
     console.log("hello");
 }
