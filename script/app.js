@@ -1,19 +1,15 @@
 'use strict';
 
 
-totalSeattle = 0;
-totalTokyo = 0;
-totalDubai = 0;
-totalParis = 0;
-totalLima = 0;
-totalall = 0;
+var totalSeattle = 0;
+var totalTokyo = 0;
+var totalDubai = 0;
+var totalParis = 0;
+var totalLima = 0;
+var totalall = 0;
 
 var timeArr = [];
 
-
-function randomNumber(max, min) {
-    return Math.floor(Math.random() * Math.floor(max, min));
-}
 
 function City(cityName, max, min, avCookie) {
     this.cityName = cityName;
@@ -22,14 +18,14 @@ function City(cityName, max, min, avCookie) {
     this.avCookie = avCookie;
 
     this.customerNumber = function (max, min) {
-        return Math.floor(Math.random() * Math.floor(max, min));
+        return Math.floor(Math.random() * (max, min)+min);
     };
 
 
 }
 
 City.prototype.customerNumber = function (max, min) {
-    return Math.floor(Math.random() * Math.floor(max, min));
+    return Math.floor(Math.random() * (max, min)+min);
 
 }
 
@@ -92,157 +88,185 @@ function header() {
 
 }
 
-header();
+header()
 
 
+// var name="mytr"
+function addCity(name) {
+    tr = document.createElement("TR");
+    tr.setAttribute("id", name);
+    document.getElementById("myTable").appendChild(tr);
 
-for (let j = 0; j < 14; j++) { }
-
-
-
-
-//create first row  //seattle
-
-tr = document.createElement("TR");
-tr.setAttribute("id", "myTr");
-document.getElementById("myTable").appendChild(tr);
-
-
-td = document.createElement("TD");
-cell = document.createTextNode("Seattle");
-td.appendChild(cell);
-document.getElementById("myTr").appendChild(td);
-for (let index = 0; index < 14; index++) {
-    
-
-    //create columes
-    td = document.createElement("TD");
-    cell = document.createTextNode(seattle.customerNumber(seattle.max, seattle.min));
-    td.appendChild(cell);
-    document.getElementById("myTr").appendChild(td);
-    totalSeattle = totalSeattle + (seattle.customerNumber(seattle.max, seattle.min));
-    timeArr[0]=(seattle.customerNumber(seattle.max, seattle.min));
-}
-
-
-td = document.createElement("TD");
-cell = document.createTextNode(totalSeattle);
-td.appendChild(cell);
-document.getElementById("myTr").appendChild(td);
-
-
-
-
-
-//tokyo
-tr = document.createElement("TR");
-tr.setAttribute("id", "myTr1");
-document.getElementById("myTable").appendChild(tr);
-
-
-td = document.createElement("TD");
-cell = document.createTextNode("tokyo");
-td.appendChild(cell);
-document.getElementById("myTr1").appendChild(td);
-
-for (let index = 0; index < 14; index++) {
 
     td = document.createElement("TD");
-    cell = document.createTextNode(tokyo.customerNumber(tokyo.max, tokyo.min));
+    cell = document.createTextNode(name);
     td.appendChild(cell);
-    document.getElementById("myTr1").appendChild(td);
-    totalTokyo = totalTokyo + (tokyo.customerNumber(tokyo.max, tokyo.min));
-
-}
-
-td = document.createElement("TD");
-cell = document.createTextNode(totalTokyo);
-td.appendChild(cell);
-document.getElementById("myTr1").appendChild(td);
+    document.getElementById(name).appendChild(td);
 
 
+    for (let index = 0; index < 14; index++) {
 
-
-//dubai
-tr = document.createElement("TR");
-tr.setAttribute("id", "myTr2");
-document.getElementById("myTable").appendChild(tr);
-
-
-td = document.createElement("TD");
-cell = document.createTextNode("Dubai");
-td.appendChild(cell);
-document.getElementById("myTr2").appendChild(td);
-
-for (let index = 0; index < 14; index++) {
+        //create columes
+        td = document.createElement("TD");
+        cell = document.createTextNode(seattle.customerNumber(seattle.max, seattle.min));
+        td.appendChild(cell);
+        document.getElementById(name).appendChild(td);
+        totalSeattle = totalSeattle + (seattle.customerNumber(seattle.max, seattle.min));
+        timeArr[0] = (seattle.customerNumber(seattle.max, seattle.min));
+    }
 
     td = document.createElement("TD");
-    cell = document.createTextNode(dubai.customerNumber(dubai.max, dubai.min));
+    cell = document.createTextNode(totalSeattle);
     td.appendChild(cell);
-    document.getElementById("myTr2").appendChild(td);
-    totalDubai = totalDubai + (dubai.customerNumber(dubai.max, dubai.min));
-
+    document.getElementById(name).appendChild(td);
 }
 
-td = document.createElement("TD");
-cell = document.createTextNode(totalDubai);
-td.appendChild(cell);
-document.getElementById("myTr2").appendChild(td);
+addCity("hek");
+addCity("eje");
+
+// //create first row  //seattle
+
+// tr = document.createElement("TR");
+// tr.setAttribute("id", "myTr");
+// document.getElementById("myTable").appendChild(tr);
+
+
+// td = document.createElement("TD");
+// cell = document.createTextNode("Seattle");
+// td.appendChild(cell);
+// document.getElementById("myTr").appendChild(td);
+
+// for (let index = 0; index < 14; index++) {
+
+
+//     //create columes
+//     td = document.createElement("TD");
+//     cell = document.createTextNode(seattle.customerNumber(seattle.max, seattle.min));
+//     td.appendChild(cell);
+//     document.getElementById("myTr").appendChild(td);
+//     totalSeattle = totalSeattle + (seattle.customerNumber(seattle.max, seattle.min));
+//     timeArr[0]=(seattle.customerNumber(seattle.max, seattle.min));
+// }
+
+
+// td = document.createElement("TD");
+// cell = document.createTextNode(totalSeattle);
+// td.appendChild(cell);
+// document.getElementById("myTr").appendChild(td);
 
 
 
-//paris
-tr = document.createElement("TR");
-tr.setAttribute("id", "myTr3");
-document.getElementById("myTable").appendChild(tr);
 
 
-td = document.createElement("TD");
-cell = document.createTextNode("paris");
-td.appendChild(cell);
-document.getElementById("myTr3").appendChild(td);
-
-for (let index = 0; index < 14; index++) {
-
-    td = document.createElement("TD");
-    cell = document.createTextNode(paris.customerNumber(paris.max, paris.min));
-    td.appendChild(cell);
-    document.getElementById("myTr3").appendChild(td);
-    totalParis = totalParis + (paris.customerNumber(paris.max, paris.min));
-
-}
-td = document.createElement("TD");
-cell = document.createTextNode(totalParis);
-td.appendChild(cell);
-document.getElementById("myTr3").appendChild(td);
+// //tokyo
+// tr = document.createElement("TR");
+// tr.setAttribute("id", "myTr1");
+// document.getElementById("myTable").appendChild(tr);
 
 
+// td = document.createElement("TD");
+// cell = document.createTextNode("tokyo");
+// td.appendChild(cell);
+// document.getElementById("myTr1").appendChild(td);
+
+// for (let index = 0; index < 14; index++) {
+
+//     td = document.createElement("TD");
+//     cell = document.createTextNode(tokyo.customerNumber(tokyo.max, tokyo.min));
+//     td.appendChild(cell);
+//     document.getElementById("myTr1").appendChild(td);
+//     totalTokyo = totalTokyo + (tokyo.customerNumber(tokyo.max, tokyo.min));
+
+// }
+
+// td = document.createElement("TD");
+// cell = document.createTextNode(totalTokyo);
+// td.appendChild(cell);
+// document.getElementById("myTr1").appendChild(td);
 
 
-//lima
-tr = document.createElement("TR");
-tr.setAttribute("id", "myTr4");
-document.getElementById("myTable").appendChild(tr);
-
-td = document.createElement("TD");
-cell = document.createTextNode("lima");
-td.appendChild(cell);
-document.getElementById("myTr4").appendChild(td);
 
 
-for (let index = 0; index < 14; index++) {
+// //dubai
+// tr = document.createElement("TR");
+// tr.setAttribute("id", "myTr2");
+// document.getElementById("myTable").appendChild(tr);
 
-    td = document.createElement("TD");
-    cell = document.createTextNode(lima.customerNumber(lima.max, lima.min));
-    td.appendChild(cell);
-    document.getElementById("myTr4").appendChild(td);
-    totalLima = totalLima + (lima.customerNumber(lima.max, lima.min));
 
-}
-td = document.createElement("TD");
-cell = document.createTextNode(totalLima);
-td.appendChild(cell);
-document.getElementById("myTr4").appendChild(td);
+// td = document.createElement("TD");
+// cell = document.createTextNode("Dubai");
+// td.appendChild(cell);
+// document.getElementById("myTr2").appendChild(td);
+
+// for (let index = 0; index < 14; index++) {
+
+//     td = document.createElement("TD");
+//     cell = document.createTextNode(dubai.customerNumber(dubai.max, dubai.min));
+//     td.appendChild(cell);
+//     document.getElementById("myTr2").appendChild(td);
+//     totalDubai = totalDubai + (dubai.customerNumber(dubai.max, dubai.min));
+
+// }
+
+// td = document.createElement("TD");
+// cell = document.createTextNode(totalDubai);
+// td.appendChild(cell);
+// document.getElementById("myTr2").appendChild(td);
+
+
+
+// //paris
+// tr = document.createElement("TR");
+// tr.setAttribute("id", "myTr3");
+// document.getElementById("myTable").appendChild(tr);
+
+
+// td = document.createElement("TD");
+// cell = document.createTextNode("paris");
+// td.appendChild(cell);
+// document.getElementById("myTr3").appendChild(td);
+
+// for (let index = 0; index < 14; index++) {
+
+//     td = document.createElement("TD");
+//     cell = document.createTextNode(paris.customerNumber(paris.max, paris.min));
+//     td.appendChild(cell);
+//     document.getElementById("myTr3").appendChild(td);
+//     totalParis = totalParis + (paris.customerNumber(paris.max, paris.min));
+
+// }
+// td = document.createElement("TD");
+// cell = document.createTextNode(totalParis);
+// td.appendChild(cell);
+// document.getElementById("myTr3").appendChild(td);
+
+
+
+
+// //lima
+// tr = document.createElement("TR");
+// tr.setAttribute("id", "myTr4");
+// document.getElementById("myTable").appendChild(tr);
+
+// td = document.createElement("TD");
+// cell = document.createTextNode("lima");
+// td.appendChild(cell);
+// document.getElementById("myTr4").appendChild(td);
+
+
+// for (let index = 0; index < 14; index++) {
+
+//     td = document.createElement("TD");
+//     cell = document.createTextNode(lima.customerNumber(lima.max, lima.min));
+//     td.appendChild(cell);
+//     document.getElementById("myTr4").appendChild(td);
+//     totalLima = totalLima + (lima.customerNumber(lima.max, lima.min));
+
+// }
+// td = document.createElement("TD");
+// cell = document.createTextNode(totalLima);
+// td.appendChild(cell);
+// document.getElementById("myTr4").appendChild(td);
 
 
 function fotter() {
@@ -260,8 +284,8 @@ function fotter() {
     for (let index = 0; index < 14; index++) {
 
         td = document.createElement("TD");
-        cell = document.createTextNode((lima.customerNumber(lima.max, lima.min))+(paris.customerNumber(paris.max, paris.min))
-        +(dubai.customerNumber(dubai.max, dubai.min))+(seattle.customerNumber(seattle.max, seattle.min))+(tokyo.customerNumber(tokyo.max, tokyo.min)));
+        cell = document.createTextNode((lima.customerNumber(lima.max, lima.min)) + (paris.customerNumber(paris.max, paris.min))
+            + (dubai.customerNumber(dubai.max, dubai.min)) + (seattle.customerNumber(seattle.max, seattle.min)) + (tokyo.customerNumber(tokyo.max, tokyo.min)));
         td.appendChild(cell);
         document.getElementById("myTr6").appendChild(td);
 
