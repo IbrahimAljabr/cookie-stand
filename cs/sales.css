@@ -3,15 +3,16 @@ body{
 }
 td ,table ,th ,tr {
     border-style: solid;
-    border-width: 3px;
+    border-width: 4px;
     border-collapse: collapse;
-    border-color: rgb(80, 80, 80);
-    padding: 7px;
+    border-color: #eeeeee;
+    padding: 8px;
     margin: 50px;
+    background-color:rgb(165, 202, 218) ;
 }
 h1{
     font-family: 'Oswald', sans-serif;
-    color: blueviolet;
+    color: teal;
     margin: 50px;
 }
 
@@ -19,6 +20,10 @@ form{
     width: 150px;
     margin: 50px;
     position: relative;
+    font-size: 25px;
+    
+    
+    
 }
 button{
     padding: 10px;
@@ -31,6 +36,17 @@ fieldset{
     padding: 20px;
     border-style: solid;
     border-color: black;
+    background-color:rgb(165, 202, 218) ;
+    border-color: #eeeeee;
+    
+}
+
+input{
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    font-size: 20px;
+    background-color: #eeeeee;
 }
 
 div{

@@ -4,13 +4,14 @@ h1{
 }
 h2{
     font-family: 'Redressed', cursive;
-    color: brown;
+    color: white;
+    background-color: tomato;
 }
 h3{
     font-family: 'Hanalei Fill', cursive;
 
     font-family: 'Redressed', cursive;
-    color: chocolate;
+    color: yellowgreen;
 }
 body{
     background-color: antiquewhite;
@@ -49,4 +50,9 @@ body a{
 div ul{
     font-size: 30px;
     text-align: left;
+    background-color: pink;
+}
+ul li{
+    background-color: plum;
+    width: 100px;
 }
