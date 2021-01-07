@@ -1,11 +1,43 @@
-td ,table {
+body{
+    background-color:powderblue;
+}
+td ,table ,th ,tr {
     border-style: solid;
     border-width: 3px;
     border-collapse: collapse;
-    border-color: gray;
+    border-color: rgb(80, 80, 80);
     padding: 7px;
+    margin: 50px;
 }
 h1{
     font-family: 'Oswald', sans-serif;
     color: blueviolet;
+    margin: 50px;
+}
+
+form{
+    width: 150px;
+    margin: 50px;
+    position: relative;
+}
+button{
+    padding: 10px;
+    background-color: royalblue;
+    color: white;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+fieldset{
+    padding: 20px;
+    border-style: solid;
+    border-color: black;
+}
+
+div{
+   position: relative;
+   display: inline;
+}
+section{
+    width: 100%;
+    display: inline;
 }

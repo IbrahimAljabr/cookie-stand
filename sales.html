@@ -1,18 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style/sales.css">
+
     <title>Document</title>
 </head>
+
 <body>
 
-    <div id="divid"></div>
-    <a href="index.html"><h1>Home</h1></a>
+    <a href="index.html">
+        <h1>Home</h1>
+    </a>
 
-    <script src="script/app.js"></script>
+
+   
+
+        <form action="" id="addCityForm">
+            <fieldset>
+                <legend>Add City</legend>
+
+                <label for="">City name:</label>
+                <label for=""><input type="text" required name="cityName"></label>
+
+                <label for="">Max cookies:</label>
+                <label for=""><input type="number" required name="max"></label>
+
+                <label for="">Min cookies:</label>
+                <label for=""><input type="number" required name="min"></label>
+
+                <label for="">Avg cookies:</label>
+                <label for=""><input step="any" type="number" required name="avg"></label>
+
+                <button>submit</button>
+            </fieldset>
+        </form>
+
+        <div id="divid">
+
+        </div>
+   
+
+
+
+    <script src="script/app2.js"></script>
 </body>
-</html>
 
+</html>
